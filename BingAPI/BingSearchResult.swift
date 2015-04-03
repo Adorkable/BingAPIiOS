@@ -9,16 +9,16 @@
 import Foundation
 
 public class BingSearchResult: NSObject {
-    let resultDescription : String
-    let id : String
-    let title : String
-    let url : String
-    var urlValue : NSURL? {
+    public let resultDescription : String
+    public let id : String
+    public let title : String
+    public let url : String
+    public var urlValue : NSURL? {
         get {
             return NSURL(string: self.url)
         }
     }
-    let metaData : NSDictionary
+    public let metaData : NSDictionary
     
     init(resultDescription : String, id : String, title : String, url : String, metaData : NSDictionary) {
         self.resultDescription = resultDescription
