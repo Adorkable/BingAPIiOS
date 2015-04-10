@@ -88,9 +88,9 @@ public class Bing: NSObject {
                         resultsHandler(results: results.0, error: results.1)
                     } else
                     {
-                        resultsHandler(results: [], error: NSError(domain: "Results in unknown format " + _stdlib_getTypeName(jsonObject), code: 0, userInfo: nil) )
+                        resultsHandler(results: [], error: NSError(domain: "Results in unknown format " + _stdlib_getDemangledTypeName(jsonObject), code: 0, userInfo: nil) )
                     }
-                } else if let errorString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                } else if let errorString = NSString(data: data!, encoding: NSUTF8StringEncoding) as? String
                 {
                     resultsHandler(results: [], error: NSError(domain: errorString, code: 0, userInfo: nil) )
                 } else

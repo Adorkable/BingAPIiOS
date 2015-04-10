@@ -32,10 +32,10 @@ public class BingSearchResult: NSObject {
     
     // TODO: should be failable init
     convenience init(dictionary : NSDictionary) {
-        self.init(resultDescription: dictionary["Description"] as String,
-                                 id: dictionary["ID"] as String,
-                              title: dictionary["Title"] as String,
-                                url: dictionary["Url"] as String,
-                           metaData: dictionary["__metadata"] as NSDictionary)
+        self.init(resultDescription: dictionary["Description"] as! String,
+                                 id: dictionary["ID"] as! String,
+                              title: dictionary["Title"] as! String,
+                                url: dictionary["Url"] as! String,
+                           metaData: dictionary["__metadata"] as! NSDictionary)
     }
 }

@@ -1,20 +1,22 @@
 //
-//  BingAPITests.swift
-//  BingAPITests
+//  Bing.swift
+//  BingAPI
 //
-//  Created by Ian on 4/3/15.
+//  Created by Ian on 4/10/15.
 //  Copyright (c) 2015 Adorkable. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import XCTest
+
 import BingAPI
 
-class BingAPITests: XCTestCase {
-    // To get test to run please replace Account Key
-    var bing : Bing = Bing(accountKey: <#Account Key#>)
+class BingTest: XCTestCase {
 
     func testSearch() {
+        // To get test to run please replace Account Key
+        var bing : Bing = Bing(accountKey: <#Account Key#>)
+        
         var expect = self.expectationWithDescription("Search")
         var timeoutInterval = NSTimeInterval(30)
         
