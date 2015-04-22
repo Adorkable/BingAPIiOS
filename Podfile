@@ -1,8 +1,10 @@
+plugin 'cocoapods-keys', {
+  :project => "BingAPI",
+  :keys => [
+    "BingAPIAccountKey"
+]}
+
 target 'BingAPITests' do
-    plugin 'cocoapods-keys', {
-        :project => "BingAPI",
-        :keys => [
-        "BingAPIAccountKey"
-        ]}
+
 end
 
