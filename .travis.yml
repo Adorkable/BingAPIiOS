@@ -2,9 +2,8 @@ language: objective-c
 xcode_workspace: BingAPI.xcworkspace
 xcode_scheme: BingAPI
 before_install:
-- gem install cocoapods
-- gem install cocoapods-keys
-- pod keys set "BingAPIAccountKey" "$BingAPIAccountKey" BingAPI
+- bundle install
+- bundle exec pod keys set "BingAPIAccountKey" $BingAPIAccountKey BingAPI
 - pod install
 script: 
 - xcodebuild test -workspace BingAPI.xcworkspace -scheme BingAPI -destination 'platform=iOS Simulator,name=iPhone 5' -verbose

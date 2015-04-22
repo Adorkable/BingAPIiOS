@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'cocoapods'
 gem 'travis'
+gem 'cocoapods'
+gem 'cocoapods-keys'
