@@ -6,7 +6,7 @@ before_install:
 - bundle exec pod keys set "BingAPIAccountKey" $BingAPIAccountKey BingAPI
 - pod install
 script: 
-- xcodebuild test -workspace BingAPI.xcworkspace -scheme BingAPI -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO -verbose
+- xcodebuild test -workspace BingAPI.xcworkspace -scheme BingAPI -sdk iphonesimulator8.1 ONLY_ACTIVE_ARCH=NO -verbose
 #xctool doesn't work well with networking - xctool -workspace BingAPI.xcworkspace -scheme BingAPI -sdk iphonesimulator test
 env:
   global: 
