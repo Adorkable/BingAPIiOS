@@ -1,0 +1,19 @@
+PODS:
+  - Keys (1.0.2)
+
+DEPENDENCIES:
+  - Keys (from `https://github.com/ashfurrow/empty-podspec.git`)
+
+EXTERNAL SOURCES:
+  Keys:
+    :git: https://github.com/ashfurrow/empty-podspec.git
+
+CHECKOUT OPTIONS:
+  Keys:
+    :commit: dfc3c5e75dd23e5e9f938f4552eaceec4a8b4b73
+    :git: https://github.com/ashfurrow/empty-podspec.git
+
+SPEC CHECKSUMS:
+  Keys: 0feb3c779714b9ddbb40a8214ca348af3ea4986c
+
+COCOAPODS: 0.36.4
