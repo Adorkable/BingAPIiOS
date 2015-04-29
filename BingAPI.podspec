@@ -13,4 +13,8 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
+  s.subspec 'PromiseKit' do |subspec|
+    subspec.dependency 'PromiseKit/Swift'
+    subspec.source_files = 'BingAPI_PromiseKit/*.swift'
+  end
 end
