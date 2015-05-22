@@ -20,7 +20,7 @@ class BingTest: XCTestCase {
         var expect = self.expectationWithDescription("Search")
         var timeoutInterval = NSTimeInterval(30)
         
-        bing.search("xbox", cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeoutInterval, resultsHandler: { (results, error) -> Void in
+        bing.search("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (results, error) -> Void in
             XCTAssertTrue(results != nil, "Returned Results Array")
             XCTAssertGreaterThan(results!.count, 0, "Returned More than Zero Results")
             XCTAssertTrue(error == nil, "No Errors")
