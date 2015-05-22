@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BingSearchResult: NSObject {
+public class BingSearchResult: NSObject, DebugPrintable {
     public let resultDescription : String
     public let id : String
     public let title : String
@@ -37,5 +37,16 @@ public class BingSearchResult: NSObject {
                               title: dictionary["Title"] as! String,
                                 url: dictionary["Url"] as! String,
                            metaData: dictionary["__metadata"] as! NSDictionary)
+    }
+    
+    override public var debugDescription: String {
+        get {
+            return super.debugDescription + "\n"
+                + "ID: \(self.id)\n"
+                + "Title: \(self.title)\n"
+                + "Description: \(self.resultDescription)\n"
+                + "URL: \(self.url)\n"
+                + "Metadata: \(self.metaData)"
+        }
     }
 }
