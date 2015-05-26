@@ -40,7 +40,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		25BF01E84C5B3C61145F92DA /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C03295F1ACF123D0047E65B /* BingAPI.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BingAPI.podspec; sourceTree = "<group>"; };
 		3C0329601ACF12A50047E65B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3C041AF21ACEF83E000FD750 /* BingAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BingAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,9 +50,6 @@
 		3C041B0E1ACEF88C000FD750 /* Bing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bing.swift; sourceTree = "<group>"; };
 		3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingSearchResult.swift; sourceTree = "<group>"; };
 		3C33DD9C1AD8415C00C072C7 /* BingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingTest.swift; sourceTree = "<group>"; };
-		3C3841121AE83A0E0066AD24 /* BingAPITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingAPITests-Bridging-Header.h"; sourceTree = "<group>"; };
-		57EC2A5BDA5CA264B1F27E8F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		FC56CD0175F47C7501D076A0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +79,6 @@
 				3C041AF41ACEF83E000FD750 /* BingAPI */,
 				3C041B011ACEF83E000FD750 /* BingAPITests */,
 				3C041AF31ACEF83E000FD750 /* Products */,
-				5A478B15BF156F71DBBE586B /* Pods */,
 				5A266B60DBFDBC16B699D724 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -121,7 +116,6 @@
 			children = (
 				3C33DD9C1AD8415C00C072C7 /* BingTest.swift */,
 				3C041B021ACEF83E000FD750 /* Supporting Files */,
-				3C3841121AE83A0E0066AD24 /* BingAPITests-Bridging-Header.h */,
 			);
 			path = BingAPITests;
 			sourceTree = "<group>";
@@ -137,18 +131,8 @@
 		5A266B60DBFDBC16B699D724 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				25BF01E84C5B3C61145F92DA /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5A478B15BF156F71DBBE586B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				57EC2A5BDA5CA264B1F27E8F /* Pods.debug.xcconfig */,
-				FC56CD0175F47C7501D076A0 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,7 +355,6 @@
 		};
 		3C041B091ACEF83E000FD750 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57EC2A5BDA5CA264B1F27E8F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -389,7 +372,6 @@
 		};
 		3C041B0A1ACEF83E000FD750 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC56CD0175F47C7501D076A0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -406,7 +388,6 @@
 		};
 		3C041B0C1ACEF83E000FD750 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 57EC2A5BDA5CA264B1F27E8F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -419,13 +400,11 @@
 				INFOPLIST_FILE = BingAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BingAPITests/BingAPITests-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		3C041B0D1ACEF83E000FD750 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC56CD0175F47C7501D076A0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -434,7 +413,6 @@
 				INFOPLIST_FILE = BingAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BingAPITests/BingAPITests-Bridging-Header.h";
 			};
 			name = Release;
 		};
