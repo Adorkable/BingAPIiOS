@@ -1,4 +1,9 @@
 language: objective-c
 xcode_project: BingAPI.xcodeproj
 xcode_scheme: BingAPI
-#xcode_sdk: iphonesimulator8.1
+xcode_sdk: iphonesimulator8.1
+env:
+  global: 
+  - TIMEOUT=1000
+  matrix:
+  - USE_NETWORK=true
