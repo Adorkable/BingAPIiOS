@@ -14,8 +14,7 @@ import BingAPI
 class BingTest: XCTestCase {
 
     func testSearch() {
-        // To get test to run please replace Account Key
-        var bing : Bing = Bing(accountKey: "")
+        var bing : Bing = Bing(accountKey: "mHl8iFbnt0J35H8vNKLnXkXzV/00MmQqo5P7sf1S7HQ=")
         
         var expect = self.expectationWithDescription("Search")
         var timeoutInterval = NSTimeInterval(30)
