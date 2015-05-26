@@ -88,12 +88,13 @@ public class BingSearchResult: NSObject, DebugPrintable {
     
     override public var debugDescription: String {
         get {
-            return super.debugDescription + "\n"
-                + "ID: \(self.id)\n"
-                + "Title: \(self.title)\n"
-                + "Description: \(self.resultDescription)\n"
-                + "URL: \(self.url)\n"
-                + "Metadata: \(self.metaData)"
+            var result = super.debugDescription + "\n"
+            result += "ID: \(self.id)\n"
+            result += "Title: \(self.title)\n"
+            result += "Description: \(self.resultDescription)\n"
+            result += "URL: \(self.url)\n"
+            result += "Metadata: \(self.metaData)"
+            return result
         }
     }
 }
