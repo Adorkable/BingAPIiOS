@@ -1,4 +1,4 @@
 language: objective-c
-xcode_workspace: BingAPI.xcworkspace
+xcode_project: BingAPI.xcodeproj
 xcode_scheme: BingAPI
 #xcode_sdk: iphonesimulator8.1
