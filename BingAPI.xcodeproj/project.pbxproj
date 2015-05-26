@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3CA387A11B150CC7007048AF /* Podspec Lint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3CA387A21B150CC7007048AF /* Build configuration list for PBXAggregateTarget "Podspec Lint" */;
+			buildPhases = (
+				3CA387A51B150CCE007048AF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Podspec Lint";
+			productName = "Podspec Lint";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		3C041AF81ACEF83E000FD750 /* BingAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C041AF71ACEF83E000FD750 /* BingAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C041AFE1ACEF83E000FD750 /* BingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; };
@@ -50,6 +64,7 @@
 		3C041B0E1ACEF88C000FD750 /* Bing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bing.swift; sourceTree = "<group>"; };
 		3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingSearchResult.swift; sourceTree = "<group>"; };
 		3C33DD9C1AD8415C00C072C7 /* BingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingTest.swift; sourceTree = "<group>"; };
+		3CA387951B150B7C007048AF /* .coveralls.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .coveralls.yml; sourceTree = "<group>"; };
 		3CA387961B150B7C007048AF /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		3CA387A61B150FFC007048AF /* NSURLRequest+PrivateExposed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+PrivateExposed.h"; sourceTree = "<group>"; };
 		3CA387A71B15102A007048AF /* BingTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingTest-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -136,6 +151,7 @@
 		3CA387991B150B8D007048AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3CA387951B150B7C007048AF /* .coveralls.yml */,
 				3CA387961B150B7C007048AF /* .travis.yml */,
 				3C03295F1ACF123D0047E65B /* BingAPI.podspec */,
 			);
@@ -215,6 +231,9 @@
 					3C041AFC1ACEF83E000FD750 = {
 						CreatedOnToolsVersion = 6.2;
 					};
+					3CA387A11B150CC7007048AF = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 				};
 			};
 			buildConfigurationList = 3C041AEC1ACEF83E000FD750 /* Build configuration list for PBXProject "BingAPI" */;
@@ -231,6 +250,7 @@
 			targets = (
 				3C041AF11ACEF83E000FD750 /* BingAPI */,
 				3C041AFC1ACEF83E000FD750 /* BingAPITests */,
+				3CA387A11B150CC7007048AF /* Podspec Lint */,
 			);
 		};
 /* End PBXProject section */
@@ -252,6 +272,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CA387A51B150CCE007048AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pod spec lint BingAPI.podspec";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C041AED1ACEF83E000FD750 /* Sources */ = {
@@ -432,6 +468,20 @@
 			};
 			name = Release;
 		};
+		3CA387A31B150CC7007048AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3CA387A41B150CC7007048AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -461,6 +511,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3CA387A21B150CC7007048AF /* Build configuration list for PBXAggregateTarget "Podspec Lint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CA387A31B150CC7007048AF /* Debug */,
+				3CA387A41B150CC7007048AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
