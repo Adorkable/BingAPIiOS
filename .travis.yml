@@ -2,15 +2,3 @@ language: objective-c
 xcode_workspace: BingAPI.xcworkspace
 xcode_scheme: BingAPI
 #xcode_sdk: iphonesimulator8.1
-before_install:
-- bundle install
-- bundle exec pod keys set "BingAPIAccountKey" $BingAPIAccountKey BingAPI
-- pod install
-#script: 
-#xctool doesn't work well with networking - xctool -workspace BingAPI.xcworkspace -scheme BingAPI -sdk iphonesimulator test
-env:
-  global: 
-  - TIMEOUT=1000
-  - secure: PhTqdtzIb0gkDjm3TfZK/Ng0A8Yw3EXD4eq2iMocJvG9aLkLa7ZoafTOf7TDxXTWDr7vp64qiXNzzQ2z2ZgmoxtROMOh5ZABlsjU/QlQuFynqRmtxXyempUnZ5PW9pECpGQF441gDXS7g4QoXyDCzXNMqP4Lu1nbZFBXJWWt8e8=
-  matrix:
-  - USE_NETWORK=true

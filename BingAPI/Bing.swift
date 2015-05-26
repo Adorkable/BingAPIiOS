@@ -11,6 +11,8 @@ import Foundation
 public class Bing: NSObject {
     public let accountKey : String
     
+    public var cachePolicy : NSURLRequestCachePolicy = NSURLRequestCachePolicy.ReloadRevalidatingCacheData
+    
     public init(accountKey : String) {
         self.accountKey = accountKey
         
@@ -45,7 +47,7 @@ public class Bing: NSObject {
         return result
     }
     
-    public func search(query : String, cachePolicy : NSURLRequestCachePolicy, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) -> Void {
+    public func search(query : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) -> Void {
 
         if let authorizationHeaderValue = self.authorizationHeaderValue()
         {
@@ -55,7 +57,7 @@ public class Bing: NSObject {
 
                 if let searchURL = NSURL(string: searchFull)
                 {
-                    var urlRequest = NSMutableURLRequest(URL: searchURL, cachePolicy: cachePolicy, timeoutInterval: timeoutInterval)
+                    var urlRequest = NSMutableURLRequest(URL: searchURL, cachePolicy: self.cachePolicy, timeoutInterval: timeoutInterval)
                     urlRequest.setValue(authorizationHeaderValue, forHTTPHeaderField: "Authorization")
                     
                     var urlSession = NSURLSession.sharedSession()

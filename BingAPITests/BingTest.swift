@@ -14,13 +14,12 @@ import BingAPI
 class BingTest: XCTestCase {
 
     func testSearch() {
-        // To get test to run please replace Account Key
-        var bing : Bing = Bing(accountKey: BingAPIKeys().bingAPIAccountKey())
+        var bing : Bing = Bing(accountKey: "mHl8iFbnt0J35H8vNKLnXkXzV/00MmQqo5P7sf1S7HQ=")
         
         var expect = self.expectationWithDescription("Search")
         var timeoutInterval = NSTimeInterval(30)
         
-        bing.search("xbox", cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeoutInterval, resultsHandler: { (results, error) -> Void in
+        bing.search("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (results, error) -> Void in
             XCTAssertTrue(results != nil, "Returned Results Array")
             XCTAssertGreaterThan(results!.count, 0, "Returned More than Zero Results")
             XCTAssertTrue(error == nil, "No Errors")
