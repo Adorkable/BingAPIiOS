@@ -11,9 +11,9 @@
 		3C041AFE1ACEF83E000FD750 /* BingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; };
 		3C041B0F1ACEF88C000FD750 /* Bing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C041B0E1ACEF88C000FD750 /* Bing.swift */; };
 		3C041B111ACEFAA7000FD750 /* BingSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */; };
-		3C33DD991AD839DD00C072C7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C0329601ACF12A50047E65B /* README.md */; };
 		3C33DD9B1AD83C2C00C072C7 /* BingAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C33DD9D1AD8415C00C072C7 /* BingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33DD9C1AD8415C00C072C7 /* BingTest.swift */; };
+		3CA3879C1B150BE2007048AF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C0329601ACF12A50047E65B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +50,9 @@
 		3C041B0E1ACEF88C000FD750 /* Bing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bing.swift; sourceTree = "<group>"; };
 		3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingSearchResult.swift; sourceTree = "<group>"; };
 		3C33DD9C1AD8415C00C072C7 /* BingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingTest.swift; sourceTree = "<group>"; };
+		3CA387961B150B7C007048AF /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		3CA387A61B150FFC007048AF /* NSURLRequest+PrivateExposed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+PrivateExposed.h"; sourceTree = "<group>"; };
+		3CA387A71B15102A007048AF /* BingTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingTest-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				3C0329601ACF12A50047E65B /* README.md */,
-				3C03295F1ACF123D0047E65B /* BingAPI.podspec */,
 				3C041AF41ACEF83E000FD750 /* BingAPI */,
 				3C041B011ACEF83E000FD750 /* BingAPITests */,
+				3CA387991B150B8D007048AF /* Supporting Files */,
 				3C041AF31ACEF83E000FD750 /* Products */,
 				5A266B60DBFDBC16B699D724 /* Frameworks */,
 			);
@@ -116,6 +119,8 @@
 			children = (
 				3C33DD9C1AD8415C00C072C7 /* BingTest.swift */,
 				3C041B021ACEF83E000FD750 /* Supporting Files */,
+				3CA387A61B150FFC007048AF /* NSURLRequest+PrivateExposed.h */,
+				3CA387A71B15102A007048AF /* BingTest-Bridging-Header.h */,
 			);
 			path = BingAPITests;
 			sourceTree = "<group>";
@@ -124,6 +129,15 @@
 			isa = PBXGroup;
 			children = (
 				3C041B031ACEF83E000FD750 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3CA387991B150B8D007048AF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CA387961B150B7C007048AF /* .travis.yml */,
+				3C03295F1ACF123D0047E65B /* BingAPI.podspec */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -226,7 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C33DD991AD839DD00C072C7 /* README.md in Resources */,
+				3CA3879C1B150BE2007048AF /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +414,7 @@
 				INFOPLIST_FILE = BingAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BingAPITests/BingTest-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -413,6 +428,7 @@
 				INFOPLIST_FILE = BingAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BingAPITests/BingTest-Bridging-Header.h";
 			};
 			name = Release;
 		};
