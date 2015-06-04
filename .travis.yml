@@ -1,5 +1,4 @@
 osx_image: beta-xcode6.3
-language: objective-c
 
 xcode_project: BingAPI.xcodeproj
 xcode_sdk: iphonesimulator8.3
@@ -11,7 +10,7 @@ xcode_scheme:
 - BingAPI
 - "Podspec Lint"
 
-script: bundle exec travis-xcodebuild
+script: travis-xcodebuild
 
 env:
     global:
