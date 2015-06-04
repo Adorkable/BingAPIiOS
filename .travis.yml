@@ -4,8 +4,11 @@ xcode_project: BingAPI.xcodeproj
 xcode_sdk: iphonesimulator
 
 xcode_scheme:
-- BingAPI
+#- BingAPI
 - "Podspec Lint"
+
+script:
+- xcodebuild test -project BingAPI.xcodeproj -scheme 'BingAPI' -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)'
 
 env:
     global:
