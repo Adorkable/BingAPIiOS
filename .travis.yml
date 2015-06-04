@@ -1,7 +1,7 @@
 osx_image: beta-xcode6.3
 language: objective-c
 xcode_project: BingAPI.xcodeproj
-xcode_sdk: iphonesimulator8.1
+xcode_sdk: iphonesimulator
 
 xcode_scheme:
 - BingAPI
