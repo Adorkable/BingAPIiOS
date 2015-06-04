@@ -2,16 +2,21 @@ osx_image: beta-xcode6.3
 language: objective-c
 
 xcode_project: BingAPI.xcodeproj
-xcode_sdk: iphonesimulator
-install:
-- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+xcode_sdk: iphonesimulator8.3
 
-script:
-- xcodebuild test -project BingAPI.xcodeproj -scheme 'BingAPI' -sdk iphonesimulator | xcpretty -c
-- xcodebuild -project BingAPI.xcodeproj -scheme 'Podspec Lint' -sdk iphonesimulator | xcpretty -c
+install:
+- gem install travis-xcodebuild
+
+xcode_scheme:
+- BingAPI
+- "Podspec Lint"
+
+script: bundle exec travis-xcodebuild
 
 env:
     global:
     - TIMEOUT=1000
+    - CLANG_STATIC_ANALYZER_MODE=deep
+    - IOS_PLATFORM_NAME='iPhone Retina (4-inch)'
     matrix:
     - USE_NETWORK=true
