@@ -6,14 +6,28 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		3CA387A11B150CC7007048AF /* Podspec Lint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3CA387A21B150CC7007048AF /* Build configuration list for PBXAggregateTarget "Podspec Lint" */;
+			buildPhases = (
+				3CA387A51B150CCE007048AF /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Podspec Lint";
+			productName = "Podspec Lint";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		3C041AF81ACEF83E000FD750 /* BingAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C041AF71ACEF83E000FD750 /* BingAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C041AFE1ACEF83E000FD750 /* BingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; };
 		3C041B0F1ACEF88C000FD750 /* Bing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C041B0E1ACEF88C000FD750 /* Bing.swift */; };
 		3C041B111ACEFAA7000FD750 /* BingSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */; };
-		3C33DD991AD839DD00C072C7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C0329601ACF12A50047E65B /* README.md */; };
 		3C33DD9B1AD83C2C00C072C7 /* BingAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C33DD9D1AD8415C00C072C7 /* BingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33DD9C1AD8415C00C072C7 /* BingTest.swift */; };
+		3CA3879C1B150BE2007048AF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C0329601ACF12A50047E65B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +54,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F929A51B87E922C3CAA24A3 /* Pods-BingAPI_PromiseKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingAPI_PromiseKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingAPI_PromiseKit/Pods-BingAPI_PromiseKit.release.xcconfig"; sourceTree = "<group>"; };
 		3C03295F1ACF123D0047E65B /* BingAPI.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BingAPI.podspec; sourceTree = "<group>"; };
 		3C0329601ACF12A50047E65B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3C041AF21ACEF83E000FD750 /* BingAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BingAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,11 +64,10 @@
 		3C041B0E1ACEF88C000FD750 /* Bing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bing.swift; sourceTree = "<group>"; };
 		3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingSearchResult.swift; sourceTree = "<group>"; };
 		3C33DD9C1AD8415C00C072C7 /* BingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingTest.swift; sourceTree = "<group>"; };
-		4A73E363B6E8B6A3A2B9D799 /* Pods-BingAPI_PromiseKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingAPI_PromiseKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingAPI_PromiseKitTests/Pods-BingAPI_PromiseKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7D2985F66B4343C23A069776 /* Pods-BingAPI_PromiseKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingAPI_PromiseKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingAPI_PromiseKit/Pods-BingAPI_PromiseKit.debug.xcconfig"; sourceTree = "<group>"; };
-		C7652ED9C27DBB01F70507EC /* Pods-BingAPI_PromiseKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingAPI_PromiseKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingAPI_PromiseKitTests/Pods-BingAPI_PromiseKitTests.release.xcconfig"; sourceTree = "<group>"; };
-		F4B54388F55B938F7DD43DA3 /* Pods_BingAPI_PromiseKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingAPI_PromiseKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F54AC90DD2EA5447E33801DB /* Pods_BingAPI_PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingAPI_PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CA387951B150B7C007048AF /* .coveralls.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .coveralls.yml; sourceTree = "<group>"; };
+		3CA387961B150B7C007048AF /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		3CA387A61B150FFC007048AF /* NSURLRequest+PrivateExposed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+PrivateExposed.h"; sourceTree = "<group>"; };
+		3CA387A71B15102A007048AF /* BingTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingTest-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,25 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D370D7B8E2920E9C247AF04 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F54AC90DD2EA5447E33801DB /* Pods_BingAPI_PromiseKit.framework */,
-				F4B54388F55B938F7DD43DA3 /* Pods_BingAPI_PromiseKitTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3C041AE81ACEF83E000FD750 = {
 			isa = PBXGroup;
 			children = (
 				3C0329601ACF12A50047E65B /* README.md */,
-				3C03295F1ACF123D0047E65B /* BingAPI.podspec */,
 				3C041AF41ACEF83E000FD750 /* BingAPI */,
 				3C041B011ACEF83E000FD750 /* BingAPITests */,
+				3CA387991B150B8D007048AF /* Supporting Files */,
 				3C041AF31ACEF83E000FD750 /* Products */,
-				A52E81072B02AE82AA9FC449 /* Pods */,
-				2D370D7B8E2920E9C247AF04 /* Frameworks */,
+				5A266B60DBFDBC16B699D724 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +134,8 @@
 			children = (
 				3C33DD9C1AD8415C00C072C7 /* BingTest.swift */,
 				3C041B021ACEF83E000FD750 /* Supporting Files */,
+				3CA387A61B150FFC007048AF /* NSURLRequest+PrivateExposed.h */,
+				3CA387A71B15102A007048AF /* BingTest-Bridging-Header.h */,
 			);
 			path = BingAPITests;
 			sourceTree = "<group>";
@@ -144,15 +148,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A52E81072B02AE82AA9FC449 /* Pods */ = {
+		3CA387991B150B8D007048AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7D2985F66B4343C23A069776 /* Pods-BingAPI_PromiseKit.debug.xcconfig */,
-				0F929A51B87E922C3CAA24A3 /* Pods-BingAPI_PromiseKit.release.xcconfig */,
-				4A73E363B6E8B6A3A2B9D799 /* Pods-BingAPI_PromiseKitTests.debug.xcconfig */,
-				C7652ED9C27DBB01F70507EC /* Pods-BingAPI_PromiseKitTests.release.xcconfig */,
+				3CA387951B150B7C007048AF /* .coveralls.yml */,
+				3CA387961B150B7C007048AF /* .travis.yml */,
+				3C03295F1ACF123D0047E65B /* BingAPI.podspec */,
 			);
-			name = Pods;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5A266B60DBFDBC16B699D724 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +231,9 @@
 					3C041AFC1ACEF83E000FD750 = {
 						CreatedOnToolsVersion = 6.2;
 					};
+					3CA387A11B150CC7007048AF = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
 				};
 			};
 			buildConfigurationList = 3C041AEC1ACEF83E000FD750 /* Build configuration list for PBXProject "BingAPI" */;
@@ -237,6 +250,7 @@
 			targets = (
 				3C041AF11ACEF83E000FD750 /* BingAPI */,
 				3C041AFC1ACEF83E000FD750 /* BingAPITests */,
+				3CA387A11B150CC7007048AF /* Podspec Lint */,
 			);
 		};
 /* End PBXProject section */
@@ -246,7 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C33DD991AD839DD00C072C7 /* README.md in Resources */,
+				3CA3879C1B150BE2007048AF /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +272,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CA387A51B150CCE007048AF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pod spec lint BingAPI.podspec";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3C041AED1ACEF83E000FD750 /* Sources */ = {
@@ -323,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -363,7 +393,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -420,6 +450,7 @@
 				INFOPLIST_FILE = BingAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BingAPITests/BingTest-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -432,6 +463,21 @@
 				);
 				INFOPLIST_FILE = BingAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BingAPITests/BingTest-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		3CA387A31B150CC7007048AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3CA387A41B150CC7007048AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -465,6 +511,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3CA387A21B150CC7007048AF /* Build configuration list for PBXAggregateTarget "Podspec Lint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CA387A31B150CC7007048AF /* Debug */,
+				3CA387A41B150CC7007048AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

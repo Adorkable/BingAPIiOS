@@ -33,7 +33,9 @@ public class Bing: NSObject {
         return result
     }
     
-    internal let searchRoot : String = "https://api.datamarket.azure.com/Bing/Search/Web?$format=json&Query="
+    public static let host : String = "api.datamarket.azure.com"
+    
+    static internal let searchRoot : String = "https://" + Bing.host + "/Bing/Search/Web?$format=json&Query="
 
     internal class func encodeSearchQuery(query : String) -> String?
     {
@@ -53,7 +55,7 @@ public class Bing: NSObject {
         {
             if let queryEncoded = Bing.encodeSearchQuery(query)
             {
-                let searchFull = self.searchRoot + queryEncoded
+                let searchFull = Bing.searchRoot + queryEncoded
 
                 if let searchURL = NSURL(string: searchFull)
                 {
@@ -122,7 +124,14 @@ public class Bing: NSObject {
                         {
                             result = Array<BingSearchResult>()
                         }
-                        result!.append( BingSearchResult(dictionary: searchResult) )
+                        if let searchResultObject = BingSearchResult(dictionary: searchResult)
+                        {
+                            result!.append(searchResultObject)
+                        } else
+                        {
+                            // TODO: way to report this to the consumer, return result and error?
+                            NSLog("Error: unable to parse search result \(searchResult) into BingSearchResult object")
+                        }
                     }
                 }
             }
