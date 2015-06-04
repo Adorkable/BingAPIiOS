@@ -1,14 +1,14 @@
 osx_image: beta-xcode6.3
 language: objective-c
+
 xcode_project: BingAPI.xcodeproj
 xcode_sdk: iphonesimulator
-
-xcode_scheme:
-#- BingAPI
-- "Podspec Lint"
+install:
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 
 script:
-- xcodebuild test -project BingAPI.xcodeproj -scheme 'BingAPI' -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)'
+- xcodebuild test -project BingAPI.xcodeproj -scheme 'BingAPI' -sdk iphonesimulator | xcpretty -c
+- xcodebuild -project BingAPI.xcodeproj -scheme 'Podspec Lint' -sdk iphonesimulator | xcpretty -c
 
 env:
     global:
