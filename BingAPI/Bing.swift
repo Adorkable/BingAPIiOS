@@ -8,7 +8,11 @@
 
 import Foundation
 
+// https://datamarket.azure.com/dataset/bing/search#schema
+
 public class Bing: NSObject {
+    public static let baseUrl = NSURL(string: "https://api.datamarket.azure.com")
+    
     public let accountKey : String
     
     public var cachePolicy : NSURLRequestCachePolicy = NSURLRequestCachePolicy.ReloadRevalidatingCacheData
@@ -33,10 +37,6 @@ public class Bing: NSObject {
         return result
     }
     
-    public static let host : String = "api.datamarket.azure.com"
-    
-    static internal let searchRoot : String = "https://" + Bing.host + "/Bing/Search/Web?$format=json&Query="
-
     internal class func encodeSearchQuery(query : String) -> String?
     {
         var result : String?
@@ -49,94 +49,23 @@ public class Bing: NSObject {
         return result
     }
     
-    public func search(query : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) -> Void {
-
-        if let authorizationHeaderValue = self.authorizationHeaderValue()
-        {
-            if let queryEncoded = Bing.encodeSearchQuery(query)
+    internal func configureUrlRequestHandler() -> ( (NSMutableURLRequest) -> Void) {
+        return { (urlRequest : NSMutableURLRequest) -> Void in
+            if let authorizationHeaderValue = self.authorizationHeaderValue()
             {
-                let searchFull = Bing.searchRoot + queryEncoded
-
-                if let searchURL = NSURL(string: searchFull)
-                {
-                    var urlRequest = NSMutableURLRequest(URL: searchURL, cachePolicy: self.cachePolicy, timeoutInterval: timeoutInterval)
-                    urlRequest.setValue(authorizationHeaderValue, forHTTPHeaderField: "Authorization")
-                    
-                    var urlSession = NSURLSession.sharedSession()
-                    var task = urlSession.dataTaskWithRequest(urlRequest, completionHandler:self.searchCompletionHandler(resultsHandler) )
-                    task.resume()
-                } else
-                {
-                    resultsHandler(results: [], error: NSError(domain: "Invalid search url " + searchFull, code: 0, userInfo: nil) )
-                }
+                urlRequest.setValue(authorizationHeaderValue, forHTTPHeaderField: "Authorization")
             } else
             {
-                resultsHandler(results: [], error: NSError(domain: "Unable to encode query " + query, code: 0, userInfo: nil) )
-            }
-        } else
-        {
-            resultsHandler(results: [], error: NSError(domain: "Unable to encode Account Key into authorization header", code: 0, userInfo: nil) )
-        }
-    }
-    
-    internal func searchCompletionHandler(resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) -> ((data : NSData?, urlResponse : NSURLResponse?, error : NSError?) -> Void) {
-        return { (data : NSData?, urlResponse : NSURLResponse?, error : NSError?) -> Void in
-            if data != nil
-            {
-                var error : NSError?
-                if let jsonObject: AnyObject = NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.allZeros, error: &error)
-                {
-                    if let jsonDictionary = jsonObject as? NSDictionary
-                    {
-                        var results = self.parseResults(jsonDictionary)
-                        resultsHandler(results: results.0, error: results.1)
-                    } else
-                    {
-                        resultsHandler(results: [], error: NSError(domain: "Results in unknown format " + _stdlib_getDemangledTypeName(jsonObject), code: 0, userInfo: nil) )
-                    }
-                } else if let errorString = NSString(data: data!, encoding: NSUTF8StringEncoding) as? String
-                {
-                    resultsHandler(results: [], error: NSError(domain: errorString, code: 0, userInfo: nil) )
-                } else
-                {
-                    resultsHandler(results: [], error: NSError(domain: "Unknown error from request", code: 0, userInfo: nil) )
-                }
-            } else
-            {
-                resultsHandler(results: [], error: error)
+                // TODO: report back to creator
+                NSLog("Error configuring Url request with correct authorization")
             }
         }
     }
     
-    internal func parseResults(jsonResponse : NSDictionary) -> (Array<BingSearchResult>?, NSError?)
-    {
-        var result : Array<BingSearchResult>?
+    public func search(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) -> Void {
         
-        if let d = jsonResponse["d"] as? NSDictionary
-        {
-            if let searchResults = d["results"] as? NSArray
-            {
-                for searchResultObject in searchResults
-                {
-                    if let searchResult = searchResultObject as? NSDictionary
-                    {
-                        if result == nil
-                        {
-                            result = Array<BingSearchResult>()
-                        }
-                        if let searchResultObject = BingSearchResult(dictionary: searchResult)
-                        {
-                            result!.append(searchResultObject)
-                        } else
-                        {
-                            // TODO: way to report this to the consumer, return result and error?
-                            NSLog("Error: unable to parse search result \(searchResult) into BingSearchResult object")
-                        }
-                    }
-                }
-            }
-        }
-        
-        return (result, nil)
+        let searchRoute = SearchRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: self.cachePolicy)
+
+        searchRoute.start(self.configureUrlRequestHandler(), resultsHandler: resultsHandler)
     }
 }

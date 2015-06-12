@@ -14,7 +14,8 @@ import BingAPI
 class BingTest: XCTestCase {
     
     override func setUp() {
-        NSURLRequest.setAllowsAnyHTTPSCertificate(true, forHost: Bing.host)
+        XCTAssertNotNil(Bing.baseUrl, "Base URL is malformed")
+        NSURLRequest.setAllowsAnyHTTPSCertificate(true, forHost: Bing.baseUrl!.host)
     }
 
     func testSearch() {
