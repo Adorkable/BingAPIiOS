@@ -30,6 +30,7 @@
 		3C33DD9B1AD83C2C00C072C7 /* BingAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C33DD9D1AD8415C00C072C7 /* BingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33DD9C1AD8415C00C072C7 /* BingTest.swift */; };
 		3CA3879C1B150BE2007048AF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C0329601ACF12A50047E65B /* README.md */; };
+		3CE8E3F11B2B6BB900740C41 /* SearchSuggestRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8E3F01B2B6BB900740C41 /* SearchSuggestRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		3CA387961B150B7C007048AF /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		3CA387A61B150FFC007048AF /* NSURLRequest+PrivateExposed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+PrivateExposed.h"; sourceTree = "<group>"; };
 		3CA387A71B15102A007048AF /* BingTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		3CE8E3F01B2B6BB900740C41 /* SearchSuggestRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				3C03A3FA1B2B5F64001B34F8 /* SearchRoute.swift */,
+				3CE8E3F01B2B6BB900740C41 /* SearchSuggestRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CE8E3F11B2B6BB900740C41 /* SearchSuggestRoute.swift in Sources */,
 				3C041B111ACEFAA7000FD750 /* BingSearchResult.swift in Sources */,
 				3C03A3FB1B2B5F64001B34F8 /* SearchRoute.swift in Sources */,
 				3C03A3F91B2B5F0E001B34F8 /* RouteBase.swift in Sources */,

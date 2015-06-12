@@ -62,10 +62,15 @@ public class Bing: NSObject {
         }
     }
     
-    public func search(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) -> Void {
+    public func search(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) {
         
         let searchRoute = SearchRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: self.cachePolicy)
-
         searchRoute.start(self.configureUrlRequestHandler(), resultsHandler: resultsHandler)
+    }
+    
+    public func searchSuggest(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<String>?, error : NSError?) -> Void) ) {
+        
+        let searchSuggestRoute = SearchSuggestRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: self.cachePolicy)
+        searchSuggestRoute.start(nil, resultsHandler: resultsHandler)
     }
 }

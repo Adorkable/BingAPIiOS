@@ -10,6 +10,11 @@ import Foundation
 
 // TODO: Swift 2.0 this should be a protocol
 class RouteBase: NSObject {
+    internal class var baseUrl : NSURL? {
+        get {
+            return Bing.baseUrl
+        }
+    }
     
     static let defaultTimeout : NSTimeInterval = 30
     let timeoutInterval : NSTimeInterval
@@ -60,7 +65,7 @@ class RouteBase: NSObject {
             combinedPath += "?\(self.query)"
         }
         
-        return NSURL(string: combinedPath, relativeToURL: Bing.baseUrl)
+        return NSURL(string: combinedPath, relativeToURL: self.dynamicType.baseUrl)
     }
     
     // TODO: Swift 2.0 this should be a default implementation function
