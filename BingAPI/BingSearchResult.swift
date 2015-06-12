@@ -8,16 +8,25 @@
 
 import Foundation
 
+/**
+*  Bing Search Results
+*/
 public class BingSearchResult: NSObject, DebugPrintable {
-    public let resultDescription : String
+    /// id
     public let id : String
+    /// description
+    public let resultDescription : String
+    /// title
     public let title : String
+    /// Url string
     public let urlString : String
+    /// Url as NSURL
     public var url : NSURL? {
         get {
             return NSURL(string: self.urlString)
         }
     }
+    /// metaData
     public let metaData : NSDictionary
     
     init(resultDescription : String, id : String, title : String, urlString : String, metaData : NSDictionary) {
@@ -33,21 +42,21 @@ public class BingSearchResult: NSObject, DebugPrintable {
     init?(dictionary : NSDictionary) {
         var initFailed = false
         
-        if let description = dictionary["Description"] as? String
-        {
-            self.resultDescription = description
-        } else
-        {
-            self.resultDescription = ""
-            initFailed = true
-        }
-        
         if let id = dictionary["ID"] as? String
         {
             self.id = id
         } else
         {
             self.id = ""
+            initFailed = true
+        }
+        
+        if let description = dictionary["Description"] as? String
+        {
+            self.resultDescription = description
+        } else
+        {
+            self.resultDescription = ""
             initFailed = true
         }
         

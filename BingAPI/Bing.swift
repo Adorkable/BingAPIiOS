@@ -10,13 +10,25 @@ import Foundation
 
 // https://datamarket.azure.com/dataset/bing/search#schema
 
+/**
+*  Bing API Object
+*/
 public class Bing: NSObject {
+    /// Bing API base Url
     public static let baseUrl = NSURL(string: "https://api.datamarket.azure.com")
     
+    /// Bing API Instance's account key
     public let accountKey : String
     
+    /// Current URLRequest caching policty
     public var cachePolicy : NSURLRequestCachePolicy = NSURLRequestCachePolicy.ReloadRevalidatingCacheData
     
+    /**
+    Main init
+    
+    :param: accountKey Azure Marketplace API key
+    
+    */
     public init(accountKey : String) {
         self.accountKey = accountKey
         
@@ -62,12 +74,26 @@ public class Bing: NSObject {
         }
     }
     
+    /**
+    Get search results
+    
+    :param: searchText      text to search for
+    :param: timeoutInterval request timeout
+    :param: resultsHandler  closure for handling results from request
+    */
     public func search(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) {
         
         let searchRoute = SearchRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: self.cachePolicy)
         searchRoute.start(self.configureUrlRequestHandler(), resultsHandler: resultsHandler)
     }
     
+    /**
+    Get search suggestion results
+    
+    :param: searchText      text to search for
+    :param: timeoutInterval request timeout
+    :param: resultsHandler  closure for handling results from request
+    */
     public func searchSuggest(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<String>?, error : NSError?) -> Void) ) {
         
         let searchSuggestRoute = SearchSuggestRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: self.cachePolicy)
