@@ -4,6 +4,7 @@ BingAPI
 [![Pod Version](http://img.shields.io/cocoapods/v/BingAPI.svg?style=flat)](http://cocoadocs.org/docsets/BingAPI/)
 [![Pod Platform](http://img.shields.io/cocoapods/p/BingAPI.svg?style=flat)](http://cocoadocs.org/docsets/BingAPI/)
 [![Pod License](http://img.shields.io/cocoapods/l/BingAPI.svg?style=flat)](http://cocoadocs.org/docsets/BingAPI/)
+[![Build Status](http://img.shields.io/travis/Adorkable/BingAPIiOS.svg?branch=master&style=flat)](https://travis-ci.org/Adorkable/BingAPIiOS)
 
 **BingAPI** a simple iOS library for accessing the Bing/Azure API.
 
@@ -40,12 +41,20 @@ Usage
 To Search use the `search` function:
 
 ``` swift
-	bing.search("xbox", cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: timeoutInterval, resultsHandler: { (results, error) -> Void in
+	bing.search("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (results : Array<BingSearchResults>?, error) -> Void in
 	   ...	
     }
 ```
 
+**Search Suggest**
 
+To get Search Suggestions use the 'searchSuggest' function:
+
+``` swift
+	bing.searchSuggest("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (results : Array<String>?, error) -> Void in
+	   ...	
+    }
+```
 
 Contributing
 ---
