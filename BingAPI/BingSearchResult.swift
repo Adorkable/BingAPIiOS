@@ -26,7 +26,7 @@ public class BingSearchResult: NSObject, DebugPrintable {
             return NSURL(string: self.urlString)
         }
     }
-    /// metaData
+    /// meta data
     public let metaData : NSDictionary
     
     init(resultDescription : String, id : String, title : String, urlString : String, metaData : NSDictionary) {
@@ -95,6 +95,7 @@ public class BingSearchResult: NSObject, DebugPrintable {
         }
     }
     
+    /// debug description
     override public var debugDescription: String {
         get {
             var result = super.debugDescription + "\n"
