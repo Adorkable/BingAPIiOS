@@ -1,0 +1,10 @@
+PODS:
+  - AdorkableAPIBase (0.0.2)
+
+DEPENDENCIES:
+  - AdorkableAPIBase
+
+SPEC CHECKSUMS:
+  AdorkableAPIBase: e90eb948ded30dd2039a807ea787490ea247560c
+
+COCOAPODS: 0.38.2

@@ -33,7 +33,7 @@ class BingTest: XCTestCase {
         bing!.search("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (results, error) -> Void in
             XCTAssertTrue(results != nil, "Returned Results Array")
             XCTAssertGreaterThan(results!.count, 0, "Returned More than Zero Results")
-            XCTAssertTrue(error == nil, "No Errors")
+            XCTAssertNil(error, "Error should be nil: \(error)")
             
             expect.fulfill()
         })

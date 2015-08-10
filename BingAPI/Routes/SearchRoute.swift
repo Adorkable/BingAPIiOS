@@ -8,7 +8,13 @@
 
 import Foundation
 
+import AdorkableAPIBase
+
 class SearchRoute: RouteBase {
+    override internal class var baseUrl : NSURL? {
+        return Bing.baseUrl
+    }
+    
     override internal class var path : String {
         get {
             return "/Bing/Search/Web"
@@ -29,16 +35,7 @@ class SearchRoute: RouteBase {
             
             if count(self.searchText) > 0
             {
-                if let encodedSearchText = self.dynamicType.encodeString(self.searchText)
-                {
-                    RouteBase.addParameter(&result, parameter: "Query=\(encodedSearchText)")
-                } else
-                {
-                    NSLog("Warning: Unable to encode search text '\(self.searchText)' for Url, using original search text string")
-                    
-                    RouteBase.addParameter(&result, parameter: "Query=\(self.searchText)")
-
-                }
+                RouteBase.addParameter(&result, name: "Query", value: "\'\(self.searchText)\'")
             }
             
             return result

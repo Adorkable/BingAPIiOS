@@ -21,7 +21,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		3C03A3F91B2B5F0E001B34F8 /* RouteBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C03A3F81B2B5F0E001B34F8 /* RouteBase.swift */; };
 		3C03A3FB1B2B5F64001B34F8 /* SearchRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C03A3FA1B2B5F64001B34F8 /* SearchRoute.swift */; };
 		3C041AF81ACEF83E000FD750 /* BingAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C041AF71ACEF83E000FD750 /* BingAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C041AFE1ACEF83E000FD750 /* BingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; };
@@ -32,6 +31,8 @@
 		3C686FE61B7933EE00E6E326 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 3C686FE51B7933EE00E6E326 /* LICENSE.md */; };
 		3CA3879C1B150BE2007048AF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C0329601ACF12A50047E65B /* README.md */; };
 		3CE8E3F11B2B6BB900740C41 /* SearchSuggestRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8E3F01B2B6BB900740C41 /* SearchSuggestRoute.swift */; };
+		801C0AE84CA5327BF0922BBB /* Pods_BingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4523A0B79E3E0C3939CC6765 /* Pods_BingAPI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		94162D56C67E038A6EE9F3FE /* Pods_BingAPITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33D7F38CCAF4736D0A27DE17 /* Pods_BingAPITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +59,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		33D7F38CCAF4736D0A27DE17 /* Pods_BingAPITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingAPITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C03295F1ACF123D0047E65B /* BingAPI.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = BingAPI.podspec; sourceTree = "<group>"; };
 		3C0329601ACF12A50047E65B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3C03A3F81B2B5F0E001B34F8 /* RouteBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteBase.swift; sourceTree = "<group>"; };
 		3C03A3FA1B2B5F64001B34F8 /* SearchRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchRoute.swift; sourceTree = "<group>"; };
 		3C041AF21ACEF83E000FD750 /* BingAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BingAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C041AF61ACEF83E000FD750 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,11 +72,17 @@
 		3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingSearchResult.swift; sourceTree = "<group>"; };
 		3C33DD9C1AD8415C00C072C7 /* BingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingTest.swift; sourceTree = "<group>"; };
 		3C686FE51B7933EE00E6E326 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		3C686FE71B7937B100E6E326 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		3CA387951B150B7C007048AF /* .coveralls.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .coveralls.yml; sourceTree = "<group>"; };
 		3CA387961B150B7C007048AF /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		3CA387A61B150FFC007048AF /* NSURLRequest+PrivateExposed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+PrivateExposed.h"; sourceTree = "<group>"; };
 		3CA387A71B15102A007048AF /* BingTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BingTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		3CE8E3F01B2B6BB900740C41 /* SearchSuggestRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSuggestRoute.swift; sourceTree = "<group>"; };
+		4523A0B79E3E0C3939CC6765 /* Pods_BingAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BingAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53666963FA43D3818BA5166D /* Pods-BingAPITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingAPITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingAPITests/Pods-BingAPITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BEA9A13FA51690138FD94A7 /* Pods-BingAPI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingAPI.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BingAPI/Pods-BingAPI.debug.xcconfig"; sourceTree = "<group>"; };
+		89F69A019709D128CDC6CF61 /* Pods-BingAPI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingAPI.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingAPI/Pods-BingAPI.release.xcconfig"; sourceTree = "<group>"; };
+		B8F71902310DFF19FDEB5915 /* Pods-BingAPITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BingAPITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BingAPITests/Pods-BingAPITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801C0AE84CA5327BF0922BBB /* Pods_BingAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C041AFE1ACEF83E000FD750 /* BingAPI.framework in Frameworks */,
+				94162D56C67E038A6EE9F3FE /* Pods_BingAPITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +125,7 @@
 				3CA387991B150B8D007048AF /* Supporting Files */,
 				3C041AF31ACEF83E000FD750 /* Products */,
 				5A266B60DBFDBC16B699D724 /* Frameworks */,
+				9F86D32C24660091ECF68882 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,7 +145,6 @@
 				3C041AF51ACEF83E000FD750 /* Supporting Files */,
 				3C041B0E1ACEF88C000FD750 /* Bing.swift */,
 				3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */,
-				3C03A3F81B2B5F0E001B34F8 /* RouteBase.swift */,
 				3C03A3F71B2B5EF7001B34F8 /* Routes */,
 			);
 			path = BingAPI;
@@ -171,6 +180,7 @@
 		3CA387991B150B8D007048AF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C686FE71B7937B100E6E326 /* Podfile */,
 				3CA387951B150B7C007048AF /* .coveralls.yml */,
 				3CA387961B150B7C007048AF /* .travis.yml */,
 				3C03295F1ACF123D0047E65B /* BingAPI.podspec */,
@@ -181,8 +191,21 @@
 		5A266B60DBFDBC16B699D724 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4523A0B79E3E0C3939CC6765 /* Pods_BingAPI.framework */,
+				33D7F38CCAF4736D0A27DE17 /* Pods_BingAPITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F86D32C24660091ECF68882 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6BEA9A13FA51690138FD94A7 /* Pods-BingAPI.debug.xcconfig */,
+				89F69A019709D128CDC6CF61 /* Pods-BingAPI.release.xcconfig */,
+				53666963FA43D3818BA5166D /* Pods-BingAPITests.debug.xcconfig */,
+				B8F71902310DFF19FDEB5915 /* Pods-BingAPITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,10 +226,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C041B081ACEF83E000FD750 /* Build configuration list for PBXNativeTarget "BingAPI" */;
 			buildPhases = (
+				55CC11D56177B65549B12562 /* Check Pods Manifest.lock */,
 				3C041AED1ACEF83E000FD750 /* Sources */,
 				3C041AEE1ACEF83E000FD750 /* Frameworks */,
 				3C041AEF1ACEF83E000FD750 /* Headers */,
 				3C041AF01ACEF83E000FD750 /* Resources */,
+				1F39BE8E3B701EADF6EA327E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -221,10 +246,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C041B0B1ACEF83E000FD750 /* Build configuration list for PBXNativeTarget "BingAPITests" */;
 			buildPhases = (
+				9172D239F643DE62609C48AA /* Check Pods Manifest.lock */,
 				3C041AF91ACEF83E000FD750 /* Sources */,
 				3C041AFA1ACEF83E000FD750 /* Frameworks */,
 				3C041AFB1ACEF83E000FD750 /* Resources */,
 				3C33DD9A1AD83C2300C072C7 /* CopyFiles */,
+				0AE9A78ADF849CDB289AB856 /* Embed Pods Frameworks */,
+				AEF8B8F51911E2FC7FB38E19 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -294,6 +322,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0AE9A78ADF849CDB289AB856 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingAPITests/Pods-BingAPITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F39BE8E3B701EADF6EA327E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingAPI/Pods-BingAPI-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3CA387A51B150CCE007048AF /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -307,6 +365,51 @@
 			shellPath = /bin/sh;
 			shellScript = "pod spec lint BingAPI.podspec";
 		};
+		55CC11D56177B65549B12562 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9172D239F643DE62609C48AA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AEF8B8F51911E2FC7FB38E19 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BingAPITests/Pods-BingAPITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -317,7 +420,6 @@
 				3CE8E3F11B2B6BB900740C41 /* SearchSuggestRoute.swift in Sources */,
 				3C041B111ACEFAA7000FD750 /* BingSearchResult.swift in Sources */,
 				3C03A3FB1B2B5F64001B34F8 /* SearchRoute.swift in Sources */,
-				3C03A3F91B2B5F0E001B34F8 /* RouteBase.swift in Sources */,
 				3C686FE61B7933EE00E6E326 /* LICENSE.md in Sources */,
 				3C041B0F1ACEF88C000FD750 /* Bing.swift in Sources */,
 			);
@@ -429,6 +531,7 @@
 		};
 		3C041B091ACEF83E000FD750 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BEA9A13FA51690138FD94A7 /* Pods-BingAPI.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -446,6 +549,7 @@
 		};
 		3C041B0A1ACEF83E000FD750 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89F69A019709D128CDC6CF61 /* Pods-BingAPI.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
@@ -462,6 +566,7 @@
 		};
 		3C041B0C1ACEF83E000FD750 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53666963FA43D3818BA5166D /* Pods-BingAPITests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -480,6 +585,7 @@
 		};
 		3C041B0D1ACEF83E000FD750 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8F71902310DFF19FDEB5915 /* Pods-BingAPITests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

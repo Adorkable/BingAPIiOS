@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Adorkable. All rights reserved.
 //
 
+import AdorkableAPIBase
+
 class SearchSuggestRoute: RouteBase {
     override internal class var baseUrl : NSURL? {
         get {
@@ -33,16 +35,7 @@ class SearchSuggestRoute: RouteBase {
             
             if count(self.searchText) > 0
             {
-                if let encodedSearchText = self.dynamicType.encodeString(self.searchText)
-                {
-                    RouteBase.addParameter(&result, parameter: "query=\(encodedSearchText)")
-                } else
-                {
-                    NSLog("Warning: Unable to encode search text '\(self.searchText)' for Url, using original search text string")
-                    
-                    RouteBase.addParameter(&result, parameter: "query=\(self.searchText)")
-                    
-                }
+                RouteBase.addParameter(&result, name: "query", value: self.searchText)
             }
             
             return result

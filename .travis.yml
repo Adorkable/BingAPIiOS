@@ -1,15 +1,15 @@
 osx_image: beta-xcode6.3
 language: objective-c
 
-xcode_project: BingAPI.xcodeproj
 xcode_sdk: iphonesimulator8.3
 install:
 - gem install cocoapods
 - gem install xcpretty
+- pod install
 
 script:
-- xcodebuild test -project BingAPI.xcodeproj -scheme 'BingAPI' -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)' | xcpretty -c
-- xcodebuild -project BingAPI.xcodeproj -scheme 'Podspec Lint' -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)' | xcpretty -c
+- xcodebuild test -workspace BingAPI.xcworkspace -scheme 'BingAPI' -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)' | xcpretty -c
+- xcodebuild -workspace BingAPI.xcworkspace -scheme 'Podspec Lint' -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)' | xcpretty -c
 
 env:
     global:
