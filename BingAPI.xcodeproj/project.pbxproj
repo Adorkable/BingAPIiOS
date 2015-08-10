@@ -29,6 +29,7 @@
 		3C041B111ACEFAA7000FD750 /* BingSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */; };
 		3C33DD9B1AD83C2C00C072C7 /* BingAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C33DD9D1AD8415C00C072C7 /* BingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33DD9C1AD8415C00C072C7 /* BingTest.swift */; };
+		3C686FE61B7933EE00E6E326 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 3C686FE51B7933EE00E6E326 /* LICENSE.md */; };
 		3CA3879C1B150BE2007048AF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C0329601ACF12A50047E65B /* README.md */; };
 		3CE8E3F11B2B6BB900740C41 /* SearchSuggestRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8E3F01B2B6BB900740C41 /* SearchSuggestRoute.swift */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		3C041B0E1ACEF88C000FD750 /* Bing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bing.swift; sourceTree = "<group>"; };
 		3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingSearchResult.swift; sourceTree = "<group>"; };
 		3C33DD9C1AD8415C00C072C7 /* BingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BingTest.swift; sourceTree = "<group>"; };
+		3C686FE51B7933EE00E6E326 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		3CA387951B150B7C007048AF /* .coveralls.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .coveralls.yml; sourceTree = "<group>"; };
 		3CA387961B150B7C007048AF /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		3CA387A61B150FFC007048AF /* NSURLRequest+PrivateExposed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+PrivateExposed.h"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		3C041AE81ACEF83E000FD750 = {
 			isa = PBXGroup;
 			children = (
+				3C686FE51B7933EE00E6E326 /* LICENSE.md */,
 				3C0329601ACF12A50047E65B /* README.md */,
 				3C041AF41ACEF83E000FD750 /* BingAPI */,
 				3C041B011ACEF83E000FD750 /* BingAPITests */,
@@ -315,6 +318,7 @@
 				3C041B111ACEFAA7000FD750 /* BingSearchResult.swift in Sources */,
 				3C03A3FB1B2B5F64001B34F8 /* SearchRoute.swift in Sources */,
 				3C03A3F91B2B5F0E001B34F8 /* RouteBase.swift in Sources */,
+				3C686FE61B7933EE00E6E326 /* LICENSE.md in Sources */,
 				3C041B0F1ACEF88C000FD750 /* Bing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
