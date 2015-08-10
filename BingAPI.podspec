@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'BingAPI'
-  s.version      = '0.2.3'
+  s.version      = '0.2.4'
   s.license      = 'MIT'
   s.homepage     = 'https://github.com/Adorkable/BingAPIiOS'
   s.authors      =  { 'Ian Grossberg' => 'yo.ian.g@gmail.com' }
