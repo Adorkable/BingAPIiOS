@@ -1,18 +1,24 @@
-osx_image: beta-xcode6.3
 language: objective-c
-
-xcode_sdk: iphonesimulator8.3
-install:
+osx_image: xcode7
+before_install:
 - gem install cocoapods
-- gem install xcpretty
-- pod install
-
 script:
-- xcodebuild test -workspace BingAPI.xcworkspace -scheme 'BingAPI' -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)' | xcpretty -c
-- xcodebuild -workspace BingAPI.xcworkspace -scheme 'Podspec Lint' -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)' | xcpretty -c
-
+- xcodebuild -workspace BingAPI.xcworkspace -scheme 'BingAPI' -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone Retina (4-inch)' build test GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
+after_success:
+- bash <(curl -s https://codecov.io/bash)
 env:
-    global:
-    - TIMEOUT=1000
-    matrix:
-    - USE_NETWORK=true
+  global:
+  - TIMEOUT=1000
+  matrix:
+  - USE_NETWORK=true
+notifications:
+  email: false
+  hipchat:
+    on_success: change
+    on_failure: always
+    rooms:
+      secure: IKowYoNzfhJ1uzSOcHKLjfiiNaP52ClSfQUMn7HAeiUdcAgYS2jlqSoD+gV3GrnOWsOl7Iq39I7a4L2Q2qmkrvJcZpK3TDufLL+jaYaSvvgRiHRjxk3KxiV+tNeOWE87LRBgaKkXFtuANVyf0+4K3EsfJG9Izv3LNmAK5S/n970=
+    template:
+    - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}
+      -- Changes: %{compare_url} -- Build details: %{build_url} --"
+    notify: true
