@@ -8,20 +8,22 @@
 
 import Foundation
 
+import AdorkableAPIBase
+
 // https://datamarket.azure.com/dataset/bing/search#schema
+// https://onedrive.live.com/view.aspx?resid=9C9479871FBFA822!110&app=Word&authkey=!AInKSlZ6KEzFE8k
 
 /**
 *  Bing API Object
 */
-public class Bing: NSObject {
-    /// Bing API base Url
-    public static let baseUrl = NSURL(string: "https://api.datamarket.azure.com")
+public class Bing: API {
+
+    public static var requestProtocol : String { return "https" }
+    public static var domain : String { return "api.datamarket.azure.com" }
+    public static var port : String { return "443" }
     
     /// Bing API Instance's account key
     public let accountKey : String
-    
-    /// Current URLRequest caching policty
-    public var cachePolicy : NSURLRequestCachePolicy = NSURLRequestCachePolicy.ReloadRevalidatingCacheData
     
     /**
     Main init
@@ -31,18 +33,16 @@ public class Bing: NSObject {
     */
     public init(accountKey : String) {
         self.accountKey = accountKey
-        
-        super.init()
     }
     
     internal func authorizationHeaderValue() -> String? {
         var result : String?
         
-        var loginString = self.accountKey + ":" + self.accountKey
+        let loginString = self.accountKey + ":" + self.accountKey
         
         if let loginData = loginString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
         {
-            let encodedLoginString = loginData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.allZeros)
+            let encodedLoginString = loginData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions())
             result = "Basic " + encodedLoginString
         }
 
@@ -81,9 +81,9 @@ public class Bing: NSObject {
     :param: timeoutInterval request timeout
     :param: resultsHandler  closure for handling results from request
     */
-    public func search(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) {
+    public func search(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : SearchRoute.ResultsHandler) {
         
-        let searchRoute = SearchRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: self.cachePolicy)
+        let searchRoute = SearchRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: Bing.cachePolicy)
         searchRoute.start(self.configureUrlRequestHandler(), resultsHandler: resultsHandler)
     }
     
@@ -94,9 +94,9 @@ public class Bing: NSObject {
     :param: timeoutInterval request timeout
     :param: resultsHandler  closure for handling results from request
     */
-    public func searchSuggest(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : ( (results : Array<String>?, error : NSError?) -> Void) ) {
+    public func searchSuggest(searchText : String, timeoutInterval : NSTimeInterval, resultsHandler : SearchSuggestRoute.ResultsHandler) {
         
-        let searchSuggestRoute = SearchSuggestRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: self.cachePolicy)
+        let searchSuggestRoute = SearchSuggestRoute(searchText: searchText, timeoutInterval: timeoutInterval, cachePolicy: Bing.cachePolicy)
         searchSuggestRoute.start(nil, resultsHandler: resultsHandler)
     }
 }

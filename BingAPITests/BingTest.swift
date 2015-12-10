@@ -19,6 +19,8 @@ class BingTest: XCTestCase {
 
         XCTAssertNotNil(Bing.baseUrl, "Base URL is malformed")
         NSURLRequest.setAllowsAnyHTTPSCertificate(true, forHost: Bing.baseUrl!.host)
+        
+        self.continueAfterFailure = false
     }
     
     func testInit() {
@@ -27,30 +29,42 @@ class BingTest: XCTestCase {
 
     func testSearch() {
         
-        var expect = self.expectationWithDescription("Search")
-        var timeoutInterval = NSTimeInterval(30)
+        let expect = self.expectationWithDescription("Search")
+        let timeoutInterval = Bing.timeoutInterval
         
-        bing!.search("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (results, error) -> Void in
-            XCTAssertTrue(results != nil, "Returned Results Array")
-            XCTAssertGreaterThan(results!.count, 0, "Returned More than Zero Results")
-            XCTAssertNil(error, "Error should be nil: \(error)")
+        bing!.search("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (result) -> Void in
             
-            expect.fulfill()
+            switch result {
+            case .Success(let results):
+                XCTAssertGreaterThan(results.count, 0, "Returned More than Zero Results")
+                expect.fulfill()
+                break
+                
+            case .Failure(let error):
+                XCTFail("Failure: \(error)")
+                break
+            }
         })
         
         self.waitForExpectationsWithTimeout(timeoutInterval, handler: nil)
     }
     
     func testSearchSuggest() {
-        var expect = self.expectationWithDescription("Search Suggest")
-        var timeoutInterval = NSTimeInterval(30)
+        let expect = self.expectationWithDescription("Search Suggest")
+        let timeoutInterval = Bing.timeoutInterval
         
-        bing!.searchSuggest("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (results, error) -> Void in
-            XCTAssertTrue(results != nil, "Returned Results Array")
-            XCTAssertGreaterThan(results!.count, 0, "Returned More than Zero Results")
-            XCTAssertTrue(error == nil, "No Errors")
+        bing!.searchSuggest("xbox", timeoutInterval: timeoutInterval, resultsHandler: { (result) -> Void in
             
-            expect.fulfill()
+            switch result {
+            case .Success(let results):
+                XCTAssertGreaterThan(results.count, 0, "Returned More than Zero Results")
+                expect.fulfill()
+                break
+                
+            case .Failure(let error):
+                XCTFail("Failure: \(error)")
+                break
+            }
         })
         
         self.waitForExpectationsWithTimeout(timeoutInterval, handler: nil)

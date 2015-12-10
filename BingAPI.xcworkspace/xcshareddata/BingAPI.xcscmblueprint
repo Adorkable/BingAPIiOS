@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0541D7B260B6654807DF0D4186A6C7F3ABEF6417",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0541D7B260B6654807DF0D4186A6C7F3ABEF6417" : 0,
+    "02FDFF61564EE6E40014C3723DE0A1DBE19930BE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "50163F4A-2798-44CE-9189-74EF3C54F92F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0541D7B260B6654807DF0D4186A6C7F3ABEF6417" : "BingAPIiOS",
+    "02FDFF61564EE6E40014C3723DE0A1DBE19930BE" : "APIBaseiOS"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BingAPI",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BingAPI.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Adorkable\/APIBaseiOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "02FDFF61564EE6E40014C3723DE0A1DBE19930BE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Adorkable\/BingAPIiOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0541D7B260B6654807DF0D4186A6C7F3ABEF6417"
+    }
+  ]
+}

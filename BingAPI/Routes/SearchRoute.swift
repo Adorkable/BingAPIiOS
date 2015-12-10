@@ -10,48 +10,57 @@ import Foundation
 
 import AdorkableAPIBase
 
-class SearchRoute: RouteBase {
-    override internal class var baseUrl : NSURL? {
-        return Bing.baseUrl
+public class SearchRoute: RouteBase<Bing> {
+    
+    public typealias ResultsHandler = (SuccessResult<[BingSearchResult]>) -> Void
+
+    override public static var httpMethod : String {
+        return "GET"
     }
     
-    override internal class var path : String {
-        get {
-            return "/Bing/Search/Web"
-        }
+    override public var path : String {
+        return "/Bing/Search/Web"
     }
     
     var searchText : String
     
-    init(searchText : String, timeoutInterval : NSTimeInterval = RouteBase.defaultTimeout, cachePolicy : NSURLRequestCachePolicy = RouteBase.defaultCachePolicy) {
+    init(searchText : String, timeoutInterval : NSTimeInterval = Bing.timeoutInterval, cachePolicy : NSURLRequestCachePolicy = Bing.cachePolicy) {
         self.searchText = searchText
         
         super.init(timeoutInterval: timeoutInterval, cachePolicy: cachePolicy)
     }
     
-    override internal var query : String {
+    override public var query : String {
         get {
             var result = "$format=json"
             
-            if count(self.searchText) > 0
-            {
-                RouteBase.addParameter(&result, name: "Query", value: "\'\(self.searchText)\'")
-            }
+            RouteBase<Bing>.addParameter(&result, name: "Query", value: "\'\(self.searchText)\'")
             
             return result
         }
     }
     
-    func start(configureUrlRequest : (urlRequest : NSMutableURLRequest) -> Void, resultsHandler : ( (results : Array<BingSearchResult>?, error : NSError?) -> Void) ) {
+    func start(configureUrlRequest : (urlRequest : NSMutableURLRequest) -> Void, resultsHandler : ResultsHandler) {
         
-        let task = self.jsonTask(configureUrlRequest: configureUrlRequest) { (jsonObject, error) -> Void in
-            if let jsonDictionary = jsonObject as? NSDictionary
-            {
-                var results = self.dynamicType.parseResults(jsonDictionary)
-                resultsHandler(results: results.0, error: results.1)
-            } else
-            {
-                resultsHandler(results: [], error: NSError(domain: "Results in unknown format " + _stdlib_getDemangledTypeName(jsonObject), code: 0, userInfo: nil) )
+        let task = self.jsonTask(configureUrlRequest) { (result) -> Void in
+            
+            switch result {
+            case .Success(let jsonObject):
+                
+                if let jsonDictionary = jsonObject as? NSDictionary
+                {
+                    let parseResults = self.dynamicType.parseResults(jsonDictionary)
+                    resultsHandler(parseResults)
+                } else
+                {
+                    let error = NSError(domain: "In results expected Dictionary, unexpected format " + _stdlib_getDemangledTypeName(jsonObject), code: 0, userInfo: nil)
+                    resultsHandler(.Failure(error))
+                }
+                break
+                
+            case .Failure(let error):
+                resultsHandler(.Failure(error))
+                break
             }
         }
         
@@ -60,14 +69,13 @@ class SearchRoute: RouteBase {
             task!.resume()
         } else
         {
-            resultsHandler(results: [], error: NSError(domain: "Unable to create SearchRoute task", code: 0, userInfo: nil) )
+            let error = NSError(domain: "Unable to create SearchRoute task", code: 0, userInfo: nil)
+            resultsHandler(.Failure(error))
         }
     }
     
-    internal class func parseResults(jsonResponse : NSDictionary) -> (Array<BingSearchResult>?, error : NSError?) {
-        var result : Array<BingSearchResult>?
-        
-        var error : NSError?
+    internal class func parseResults(jsonResponse : NSDictionary) -> SuccessResult<[BingSearchResult]> {
+        var result = Array<BingSearchResult>()
         
         if let d = jsonResponse["d"] as? NSDictionary
         {
@@ -77,23 +85,19 @@ class SearchRoute: RouteBase {
                 {
                     if let searchResult = searchResultObject as? NSDictionary
                     {
-                        if result == nil
-                        {
-                            result = Array<BingSearchResult>()
-                        }
                         if let searchResultObject = BingSearchResult(dictionary: searchResult)
                         {
-                            result!.append(searchResultObject)
+                            result.append(searchResultObject)
                         } else
                         {
-                            // TODO: count unparsable results
-                            error = NSError(domain: "Unable to parse search result \(searchResult) into BingSearchResult object", code: 0, userInfo: nil)
+                            let error = NSError(domain: "Unable to parse search result \(searchResult) into BingSearchResult object", code: 0, userInfo: nil)
+                            return .Failure(error)
                         }
                     }
                 }
             }
         }
         
-        return (result, error)
+        return .Success(result)
     }
 }

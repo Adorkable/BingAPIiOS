@@ -8,10 +8,12 @@
 
 import Foundation
 
+import AdorkableAPIBase
+
 /**
 *  Bing Search Results
 */
-public class BingSearchResult: NSObject, DebugPrintable {
+public class BingSearchResult: RouteBase<Bing>, CustomDebugStringConvertible {
     /// id
     public let id : String
     /// description

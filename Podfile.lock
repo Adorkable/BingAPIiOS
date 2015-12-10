@@ -1,10 +1,10 @@
 PODS:
-  - AdorkableAPIBase (0.0.2)
+  - AdorkableAPIBase (0.3.0)
 
 DEPENDENCIES:
-  - AdorkableAPIBase
+  - AdorkableAPIBase (~> 0.3)
 
 SPEC CHECKSUMS:
-  AdorkableAPIBase: e90eb948ded30dd2039a807ea787490ea247560c
+  AdorkableAPIBase: 33fa9a70c5087aaa831734cf5f9fa44f3d325acf
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
