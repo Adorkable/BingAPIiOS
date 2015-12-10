@@ -53,7 +53,7 @@ public class Bing: API {
     {
         var result : String?
         
-        if let queryEncoded = query.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+        if let queryEncoded = self.encodeString(query)
         {
             result = "\'" + queryEncoded + "\'"
         }
