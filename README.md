@@ -1,10 +1,11 @@
 BingAPI
 ===
 
-[![Pod Version](http://img.shields.io/cocoapods/v/BingAPI.svg?style=flat)](http://cocoadocs.org/docsets/BingAPI/)
+[![Build Status](http://img.shields.io/travis/Adorkable/BingAPIiOS.svg?branch=master&style=flat)](https://travis-ci.org/Adorkable/BingAPIiOS)
+[![codecov.io](https://img.shields.io/codecov/c/github/Adorkable/BingAPIiOS.svg)](http://codecov.io/github/Adorkable/BingAPIiOS?branch=master)
 [![Pod Platform](http://img.shields.io/cocoapods/p/BingAPI.svg?style=flat)](http://cocoadocs.org/docsets/BingAPI/)
 [![Pod License](http://img.shields.io/cocoapods/l/BingAPI.svg?style=flat)](http://cocoadocs.org/docsets/BingAPI/)
-[![Build Status](http://img.shields.io/travis/Adorkable/BingAPIiOS.svg?branch=master&style=flat)](https://travis-ci.org/Adorkable/BingAPIiOS)
+[![Pod Version](http://img.shields.io/cocoapods/v/BingAPI.svg?style=flat)](http://cocoadocs.org/docsets/BingAPI/)
 
 **BingAPI** a simple iOS library for accessing the Bing/Azure API.
 
