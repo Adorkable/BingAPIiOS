@@ -28,7 +28,7 @@
 		3C041B111ACEFAA7000FD750 /* BingSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C041B101ACEFAA7000FD750 /* BingSearchResult.swift */; };
 		3C33DD9B1AD83C2C00C072C7 /* BingAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3C041AF21ACEF83E000FD750 /* BingAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3C33DD9D1AD8415C00C072C7 /* BingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C33DD9C1AD8415C00C072C7 /* BingTest.swift */; };
-		3C686FE61B7933EE00E6E326 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 3C686FE51B7933EE00E6E326 /* LICENSE.md */; };
+		3C686FE61B7933EE00E6E326 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C686FE51B7933EE00E6E326 /* LICENSE.md */; };
 		3CA3879C1B150BE2007048AF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3C0329601ACF12A50047E65B /* README.md */; };
 		3CE8E3F11B2B6BB900740C41 /* SearchSuggestRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE8E3F01B2B6BB900740C41 /* SearchSuggestRoute.swift */; };
 		801C0AE84CA5327BF0922BBB /* Pods_BingAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4523A0B79E3E0C3939CC6765 /* Pods_BingAPI.framework */; };
@@ -271,7 +271,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Adorkable;
 				TargetAttributes = {
 					3C041AF11ACEF83E000FD750 = {
@@ -309,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C686FE61B7933EE00E6E326 /* LICENSE.md in Resources */,
 				3CA3879C1B150BE2007048AF /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,7 +422,6 @@
 				3CE8E3F11B2B6BB900740C41 /* SearchSuggestRoute.swift in Sources */,
 				3C041B111ACEFAA7000FD750 /* BingSearchResult.swift in Sources */,
 				3C03A3FB1B2B5F64001B34F8 /* SearchRoute.swift in Sources */,
-				3C686FE61B7933EE00E6E326 /* LICENSE.md in Sources */,
 				3C041B0F1ACEF88C000FD750 /* Bing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +466,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -542,6 +543,7 @@
 				INFOPLIST_FILE = BingAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.adorkable.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -560,6 +562,7 @@
 				INFOPLIST_FILE = BingAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.adorkable.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -579,6 +582,7 @@
 				);
 				INFOPLIST_FILE = BingAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.adorkable.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BingAPITests/BingTest-Bridging-Header.h";
 			};
@@ -594,6 +598,7 @@
 				);
 				INFOPLIST_FILE = BingAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.adorkable.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BingAPITests/BingTest-Bridging-Header.h";
 			};
