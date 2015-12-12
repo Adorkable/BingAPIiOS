@@ -11,14 +11,3 @@ env:
   - TIMEOUT=1000
   matrix:
   - USE_NETWORK=true
-notifications:
-  email: false
-  hipchat:
-    on_success: change
-    on_failure: always
-    rooms:
-      secure: IKowYoNzfhJ1uzSOcHKLjfiiNaP52ClSfQUMn7HAeiUdcAgYS2jlqSoD+gV3GrnOWsOl7Iq39I7a4L2Q2qmkrvJcZpK3TDufLL+jaYaSvvgRiHRjxk3KxiV+tNeOWE87LRBgaKkXFtuANVyf0+4K3EsfJG9Izv3LNmAK5S/n970=
-    template:
-    - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}
-      -- Changes: %{compare_url} -- Build details: %{build_url} --"
-    notify: true
